@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
 export default function Navbar() {
   return (
     <>
@@ -19,21 +18,6 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
-
-      <div className="flex p-4 justify-between items-center border-b border-gray-200 ">
-        <div>color -{">"} color</div>
-
-        <div>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-500">
-                Change Gradient
-            </Button>
-        </div>
-
-        <div className="flex justify-between gap-x-2">
-          <div>get css</div>
-          <div>rotate gradient</div>
-        </div>
-      </div>
     </>
   );
 }
