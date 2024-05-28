@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import GetCss from "@/components/get-css";
 const generateGradientClass = () => {
   const gradients = [
     "bg-gradient-to-r from-cyan-500 to-blue-500",
@@ -131,24 +132,23 @@ export default function Home() {
   const colors = extractColorsFromClass(gradientClass);
   return (
     <>
-      <div className="flex p-4 justify-between items-center border-b border-gray-200 ">
+      <div className="flex p-4 justify-between items-center border-b border-gray-200 flex-wrap">
         <div>
-          <span className={`bg-${colors.from}`}>{colors.from}</span> -{">"}{" "}
-          <span className={`bg-${colors.to}`}>{colors.to}</span>
+          <span>{colors.from}</span> -{">"}{" "}
+          <span>{colors.to}</span>
         </div>
 
         <div>
           <Button
-            className="bg-gradient-to-r from-cyan-500 to-blue-500"
+            className={`${gradientClass}`}
             onClick={handleGradientChange}
           >
             Change Gradient
           </Button>
         </div>
 
-        <div className="flex justify-between gap-x-2">
-          <div>get css</div>
-          <div>rotate gradient</div>
+        <div className="flex justify-between items-center gap-x-2">
+          <GetCss gradientClass={gradientClass}/>
         </div>
       </div>
 
